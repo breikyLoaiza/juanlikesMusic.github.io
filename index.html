@@ -28,18 +28,7 @@
 
   <script type="module" src="cmp/mi-footer.js"></script>
   <link rel="stylesheet" href="css/estilos.css">
-
-  <style>
-    mi-footer {
-            position: center;
-            background: #0E69B0;
-            color:#16044C;
-            width: 100%;
-            bottom: -100px;
-        }
-  </style>
-
-
+  
 <body>
 
   <header>
@@ -63,14 +52,14 @@
 
       <p>Ingresa solo números enteros</p>
       <input type="text" id="cel" required pattern="[0-9]" />
-      <label for="cel">Celsius </label>
+      <label for="cel">Celsius</label>
       <small>Obligatorio</small>
 
     </campo-dinámico>
 
     <campo-dinámico>
       <b>Resultado: <span id="resul"></span></b>
-      <b>Lectura: <span id="lectura"></span></b>
+      <b><span id="lectura"></span></b>
       <br><br>
     </campo-dinámico>
 
