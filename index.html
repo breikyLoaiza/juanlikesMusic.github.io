@@ -83,11 +83,11 @@
 
     calc.onclick = function () {
       if (kg.value != "" && m.value != "") {
-        resulx = (kg.value / (m.value * m.value));
+        resulx = (cel.value * 1.8 + 32);
         resul.innerHTML = resulx
 
       } else {
-        alert("Debes ingresar peso y altura.")
+        alert("Debes ingresar grados celsius")
       }
 
     };
