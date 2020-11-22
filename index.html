@@ -1,4 +1,122 @@
 <!DOCTYPE html>
-<html lang="es">
-  <h1>Hola</h1>
- <hmtl>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HAGP-PWA</title>
+    <script src="js/registraServiceWorker.js"></script>
+    <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons"
+    rel="stylesheet">
+    <!-- Ícono para la página web. Debe ponerse en la raíz de la página. -->
+    <link rel="icon" sizes="32x32" href="favicon.ico">
+
+    <!-- Color de la barra de navegación de Chrome en dispositivos móviles. -->
+    <meta name="theme-color" content="#81d4f4">
+
+    <!-- Configuración de la PWA: Chrome y Edge. -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Configuración para Web Clip en Safari. -->
+    <meta name="apple-mobile-web-app-title" content="dmppwa">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="apple-touch-icon" href="img/icono2048.png">
+    <link rel="apple-touch-icon" sizes="256x256" href="img/icono256.png">
+    <link rel="apple-touch-icon" sizes="1024x1024" href="img/icono1024.png">
+    <link rel="apple-touch-icon" sizes="2048x2048" href="img/icono2048.png">
+
+    <script type="module" src="cmp/mi-footer.js"></script>
+    <link rel="stylesheet" href="css/estilos.css">
+    
+
+    
+  <body>
+    
+      <header>
+        <div class="toolbar">
+          
+          <h1 align="center">Fórmula Física</h1>
+        
+          <button id="calc"><span class="material-icons">save</span></button>
+          </span>
+        
+        </div>
+      </header>
+      <div class="contenido">
+        <center><p><b>Calculadora de IMC: Indice de masa corporal<output id="agent"></output></b></p>
+        <p>Calcula y conoce cuál es el estado de tu Índice de Masa Corporal y evita riesgos de salud.</p>
+        <P>Si el IMC es menor a 18.5 quiere decir que el peso es inferior al normal</p>
+        <p>Si el IMC es mayor que 18.5  y menor a 24.0 quiere decir que el peso es normal</p>
+        <p>Si el IMC es mayor que 25  y menor a 29.9 quiere decir que el peso superior al normal</p>
+        <p> Si el IMC es mayor que 30 quiere decir que hay obesidad.</P></p>
+        <b>Fórmula:Kg/m² </b>
+         
+
+        <campo-dinámico>
+          <center>
+            <p>Ingresa solo números enteros</p>
+            <input type="text" id="kg" required pattern="[0-9]"/>
+            <label for="kg">Peso(kg) </label>
+            <small>Obligatorio</small>
+          </center>
+        </campo-dinámico>
+        
+        
+          <campo-dinámico>
+            <center>  
+            <p>Metros y centimetros</p>
+          <input type="text" id="m"  required/>
+          <label for="m">Estatura(m)</label>
+          <small>Obligatorio</small>
+        </center>
+        </campo-dinámico>  
+        
+        <campo-dinámico>
+          <b>IMC: <span id="imc"></span></b>
+          <b>Lectura: <span id="lectura"></span></b>
+        <br><br>
+      </campo-dinámico>
+     
+      </div>
+     
+   
+  
+
+    <script type="text/javascript">
+      calc = document.getElementById("calc");
+      kg = document.getElementById("kg");
+      m = document.getElementById("m");
+      imc = document.getElementById("imc");
+      lectura = document.getElementById("lectura");
+    
+      calc.onclick = function(){
+        if(kg.value!="" && m.value!=""){
+          imcx = (kg.value / (m.value* m.value));
+          imc.innerHTML = imcx
+          console.log(imcx);
+    
+          if(imcx<18.5){ lectura.innerHTML = "Peso inferior al normal"; }
+          else if(imcx>=18.5 && imcx<=24.9){ lectura.innerHTML = "Peso normal"; }
+          else if(imcx>=25 && imcx<=29.9){ lectura.innerHTML = "Peso superior al normal"; }
+          else if(imcx>30){ lectura.innerHTML = "Obesidad"; }
+    
+        }else{
+          alert("Debes ingresar peso y altura.")
+        }
+    
+      };
+    </script>
+ 
+    <footer>
+      <p>
+        <center>
+        <mi-footer></mi-footer>
+      </center>
+      </p>
+    </footer>
+   
+  </body>
+</html>
