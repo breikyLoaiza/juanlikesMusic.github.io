@@ -1,6 +1,6 @@
 class MiFooter extends HTMLElement {
   connectedCallback(){
-    this.innerHTML = */ html*/
+    this.innerHTML = /* html*/
       'Copyright &copy; Alvarez Hernández Juan Pablo';
   }
 }
