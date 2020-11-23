@@ -42,9 +42,7 @@
      --color-control-error: #b00020;
      --color-control-fondo: #eeeeee;
      --color-active: #4646462c;
-     /** Los 2 primeros fonts son para apple y "Roboto" es para Android. */
      --font-family: -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
-     /* Uso de la custom property "--color-contenido". */
      color: var(--color-contenido);
      background-color: var(--color-contenido-fondo);
      font-family: var(--font-family);
@@ -191,9 +189,9 @@
     <b>Fórmula: ºF = ºC x 1.8 + 32</b>
 
 
-    <campo-dinámico>
+    <campo-dinámico >
 
-      <p>Ingresa el numero</p>
+      <p text:align="center">Ingresa el numero</p>
       <input type="text" id="cel" required pattern="[0-9]" />
       <label for="cel">Celsius</label>
       <small>Obligatorio</small>
