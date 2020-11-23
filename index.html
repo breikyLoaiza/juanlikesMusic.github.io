@@ -31,20 +31,14 @@
   
 <body>
   <style>
-    /* :root
-    * Elemento raíz del documento. En este caso corresponde al elemento html.
-    */
+
     :root {
-     /* custom properties
-      * Valores que puede definir el desarrollador y reutilizar en todas las
-      * definiciones de estilos. Deben iniciar con -- y colocarse en el
-      * elemento raíz. */
      --color-primario: black;
      --color-primario-fondo: #2f9de7;
      --color-contenido: black;
      --color-contenido-fondo: white;
      --color-control-sin-foco: gray;
-     --color-control-con-foco: #575697;
+     --color-control-con-foco: #2d2d44;
      --color-control-error: #b00020;
      --color-control-fondo: #eeeeee;
      --color-active: #4646462c;
@@ -75,9 +69,7 @@
      position: relative;
    }
 
-   /* selector anidado: .toolbar h1
-    * se aplica a todos los h1 que estén dentro de un elemento de la clase
-    * "toolbar" */
+
    .toolbar h1 {
      margin: 0 auto 0 0;
      padding: 0;
@@ -99,8 +91,6 @@
      padding: 0;
      margin: 0 0 0 1.5rem;
      background-color: transparent;
-     /* Quita una especie de borde usualmente usado para indicar que el
-      * elemento tiene el foco. */
      outline: none;
    }
 
@@ -129,44 +119,15 @@
      left: 1rem;
      font-size: 1rem;
      color: var(--color-control-sin-foco);
-     /* transition: 0.7s ease-in
-      * Cuando algún atributo cambie, lo hace lentamente
-      * 0.7s
-      * La transición tarda 0.7 segundos
-      * ease-in
-      * La transición inicia lento y luego acelera */
      transition: 0.7s ease-in;
    }
 
-   /* La misma definición de estilos se aplicaca a 2 selectores diferentes
-    * separados por ",":
-    * campo-dinámico .control_sin_foco+label
-    *   Selecciona a un elemento "label" ubicado inmediatamente después de un
-    *   elemento hermano de la clase "control_sin_foco" y ambos elementos
-    *   están dentro de un custom element de tipo "campo-dinámico".
-    * campo-dinámico :focus+label
-    *   Selecciona a un elemento "label" ubicado inmediatamente después de un
-    *   elemento hermano que tiene el foco del teclado y ambos elementos
-    *   están dentro de un custom element de tipo "campo-dinámico". */
    campo-dinámico .control_sin_foco+label,
    campo-dinámico :focus+label {
      top: 0.5rem;
      font-size: 0.75rem;
    }
 
-   /* La misma definición de estilos se aplicaca a 3 selectores diferentes
-    * separados por ",":
-    * campo-dinámico select
-    *   Selecciona a un elemento "select" dentro de un custom element de tipo
-    *   "campo-dinámico".
-    * campo-dinámico input
-    *   Selecciona a un elemento "input" dentro de un custom element de tipo
-    *   "campo-dinámico".
-    * campo-dinámico textarea
-    *   Selecciona a un elemento "textarea" dentro de un custom element de
-    *   tipo "campo-dinámico".
-    *   Un "textarea" es un control de captura de texto de varios renglones.
-    */
    campo-dinámico select,
    campo-dinámico input,
    campo-dinámico textarea {
@@ -183,8 +144,6 @@
      transition: 0.7s ease-in;
    }
 
-   /* Ayuda dentro de un campo dinámico. El elemento "small" se usa para
-    * comentarios secundarios y se muestra en letras pequeñas. */
    campo-dinámico small {
      display: block;
      height: 1em;
@@ -204,19 +163,12 @@
      border-bottom-color: var(--color-control-con-foco);
    }
 
-   /* :invalid
-    * Pseudoclase para seleccionar elementos que no cumplen las reglas de
-    * validación. */
    campo-dinámico select:invalid,
    campo-dinámico input:invalid,
    campo-dinámico textarea:invalid {
      border-bottom-color: var(--color-control-error);
    }
 
-   /* campo-dinámico :invalid~small
-    *   Selecciona a los elementos "small" que van después de un elemento
-    *   hermano inválido y ambos elementos están dentro de un custom element
-    *   de tipo "campo-dinámico". */
    campo-dinámico :invalid+label,
    campo-dinámico :invalid~small {
      color: var(--color-control-error);
@@ -236,13 +188,12 @@
   <div class="contenido">
     <p><b>Conversión de Escalas de Temperatura<output id="agent"></output></b></p>
     <p>Calcula y conoce cuáles son los grados Celsius a Fahrenheit</p>
-    <P>Fahrenheit es una escala de temperatura termodinámica, donde el punto de congelación del agua es a 32 grados Fahrenheit (°F) y el punto de ebullición a 212 ° F ( a una presión atmosférica normal).</p>
     <b>Fórmula: ºF = ºC x 1.8 + 32</b>
 
 
     <campo-dinámico>
 
-      <p>Ingresa solo números enteros</p>
+      <p>Ingresa el numero</p>
       <input type="text" id="cel" required pattern="[0-9]" />
       <label for="cel">Celsius</label>
       <small>Obligatorio</small>
